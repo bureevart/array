@@ -23,9 +23,13 @@ Array::Array(int size) : size(size) {
  * @param array массив-копия
  */
 Array::Array(Array &array) {
-    this->arr = array.arr;
-}
+    this->size = array.size;
+    this->arr = new int[this->size];
 
+    for (int i = 0; i < size; ++i) {
+        this->arr[i] = array.arr[i];
+    }
+}
 /**
  * Заполнение массива с консоли
  *
